@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 // eslint-disable-next-line react/prop-types
-export const AddCategory = ({ setCategories}) => {
+export const AddCategory = ({ onNewCategory }) => {
 
     const [inputValue, setInputValue] = useState('');
 
@@ -14,8 +14,9 @@ export const AddCategory = ({ setCategories}) => {
         if (inputValue.trim().length <= 1) return;
 
 
-        setCategories( categories => [inputValue, ...categories]);
+        // setCategories( categories => [inputValue, ...categories]);
         setInputValue(''); //Limpia el input cada vez que se inserta un valor
+        onNewCategory( inputValue.trim() );
     }
 
     return (
