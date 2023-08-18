@@ -9,10 +9,7 @@ export const GifExpert = () => {
     console.log(categories)
     // console.log(setCategories)
     
-    const onAddCategory = () => {
-        //Agregar nueva categoria
-        setCategories(['Valorant', ...categories]);
-    }
+    
 
     return (
         <>
@@ -21,10 +18,10 @@ export const GifExpert = () => {
 
             {/* INPUT */}
             {/* <input/> */}
-            <AddCategory/>
+            <AddCategory setCategories = { setCategories }/>
 
             {/* LISTADO DE GIF */}
-            <button onClick={ onAddCategory }> Agregar </button>
+           
             <ol>
                 { categories.map( category => {
                     return <li key = { category }> { category } </li>
